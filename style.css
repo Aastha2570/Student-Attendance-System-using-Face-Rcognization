@@ -1,0 +1,67 @@
+body { 
+  font-family: Arial, sans-serif; 
+  background: #0f172a; 
+  color: white; 
+  text-align: center; 
+}
+
+.container { 
+  margin: 50px auto; 
+  width: 600px; 
+  padding: 20px; 
+  background: #1e293b; 
+  border-radius: 15px; 
+  box-shadow: 0 0 20px rgba(0,0,0,0.5);
+}
+
+h1 { 
+  color: #38bdf8; 
+}
+
+input[type=file] { 
+  margin: 20px; 
+  padding: 10px; 
+  border: 2px dashed #38bdf8; 
+  border-radius: 10px; 
+  background: #0f172a; 
+  color: #38bdf8; 
+}
+
+button { 
+  background: #38bdf8; 
+  border: none; 
+  padding: 10px 20px; 
+  border-radius: 10px; 
+  cursor: pointer; 
+  color: black; 
+  font-weight: bold; 
+  transition: 0.3s;
+}
+
+button:hover {
+  background: #0ea5e9;
+  color: white;
+}
+
+img { 
+  margin-top: 20px; 
+  max-width: 100%; 
+  border-radius: 10px; 
+  border: 3px solid #38bdf8;
+}
+
+table { 
+  margin: 20px auto; 
+  border-collapse: collapse; 
+  width: 100%; 
+  background: #0f172a; 
+}
+
+table th, table td { 
+  border: 1px solid #38bdf8; 
+  padding: 10px; 
+}
+
+table th { 
+  background: #1e293b; 
+}

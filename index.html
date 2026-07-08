@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Blockchain based Attendance System</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+  <div class="container">
+    <h1>Blockchain based Attendance System</h1>
+
+    {% if stage == 'upload' %}
+    <form action="/upload" method="post" enctype="multipart/form-data" class="step-form">
+      <label>Select Group Image:</label>
+      <input type="file" name="group_image" required>
+      <button type="submit">Upload Image</button>
+    </form>
+    {% endif %}
+
+    {% if stage == 'train' %}
+      <p class="feedback">{{ upload_message }}</p>
+      <form action="/train" method="post" class="step-form">
+        <button type="submit">Train Model</button>
+      </form>
+    {% endif %}
+
+    {% if stage == 'attendance' %}
+      <p class="feedback">{{ train_message }}</p>
+
+      {% if processed_img %}
+        <h2>Processed Image</h2>
+        <img src="{{ processed_img }}" alt="Processed Image">
+      {% endif %}
+
+      {% if attendance %}
+        <h2>Attendance</h2>
+        <table>
+          <tr><th>Name</th><th>Status</th></tr>
+          {% for row in attendance %}
+            <tr><td>{{ row[0] }}</td><td>{{ row[1] }}</td></tr>
+          {% endfor %}
+        </table>
+        <a href="{{ csv_file }}"><button>Download CSV</button></a>
+      {% endif %}
+    {% endif %}
+
+  </div>
+</body>
+</html>
